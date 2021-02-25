@@ -1,0 +1,38 @@
+<header class="mb-auto mx-auto">
+    <div>
+        <h3 class="float-md-start mb-0"><%= nav %></h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <% if (locals.isAdmin) { %>
+            <a class="nav-link <% if (nav === 'Admin') { %> active <% } %>" href="/admin">Admin</a>
+            <%} %>
+            <a class="nav-link <% if (nav === 'Home') { %> active <% } %>" href="/">Home</a>
+            <a class="nav-link <% if (nav === 'Help') { %> active <% } %>" href="/help">Help</a>
+            <a class="nav-link <% if (nav === 'About') { %> active <% } %>" href="/about">About</a>
+            <a class="nav-link <% if (nav === 'Contact Info') { %> active <% } %>" href="/contact">Contact info</a>
+            <% if (locals.isAuth === false) { %>
+                <a type="button" id="nav-btn" class="btn btn-light" href="/login">Log in</a>
+            <%} else { %>
+                <button type="button" id="nav-btn"  class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#logOutModal">Log out</button>
+                <div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="logOutModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="logOutModal">Login out</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to Log Out?
+                            </div>
+                            <div class="modal-footer">
+                                <form action="/logout" method="POST">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-dark" type="submit">Log out</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </nav>
+    </div>
+</header>

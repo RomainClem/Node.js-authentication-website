@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<%- include('../partials/head'); %>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <%- include('../partials/header'); %>
+    <body class="d-flex h-100 text-center text-white bg-dark">
+    <main class="px-3">
+        <div class="card mb-3" >
+            <div class="row g-0">
+                <div class="col-md-4 m-auto">
+                    <img src="../images/catto.png" class="img-thumbnail" alt="Roger">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title text-light bg-dark">About Us</h5>
+                        <p class="card-text text-dark text-start">This website has been made in 2020 by Romain Clemencon with the help of his cat (picture on the left, or top for mobile users) for his Server Side Web development Project. </p>
+                        <p class="card-text text-dark text-start">The website offers authentication with the ability to login and logout. Password are encrypted and authentication token as well.  Admins have a dashboard where they can add, edit or delete users. Once logged in, an authentication token is stored on the server.</p>
+                        <p class="card-text text-dark text-start">The MVC architecture is used to separate the logic of the server.</p>
+                        <p class="card-text"><small class="text-muted">I hope you will enjoy my website.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer'); %>
+    </body>
+</div>
+</html>

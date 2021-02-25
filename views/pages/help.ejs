@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<%- include('../partials/head'); %>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <%- include('../partials/header'); %>
+    <body class="d-flex h-100 text-center text-white bg-dark">
+    <main class="px-3">
+        <div class="accordion accordion-flush bg-light text-dark" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="p-1 text-light bg-dark"> I can't login.</div>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-start">
+                        The authentication is done <strong>server side</strong> and stored on our server at the moment. Please contact an admin to check if there is an issue with our authentication system.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="p-1 text-light bg-dark">I can't access the Admin page.</div>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-start">
+                        Only an <strong>administrator</strong> can access the administration dashboard. You role might need to be updated if you should be an administrator. Please contact our support about this.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <div class="p-1 text-light bg-dark">The website is not rendering properly.</div>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-start">
+                        This website has been made to be <strong>responsive</strong> for all browser that support html5 and css3. Please ensure that you are using an up to date web browser. You might need to clear your cache and cookies.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer'); %>
+    </body>
+</div>
+</html>

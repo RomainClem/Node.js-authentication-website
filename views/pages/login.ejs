@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<%- include('../partials/head'); %>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <%- include('../partials/header'); %>
+    <body class="d-flex h-100 text-center text-white bg-dark">
+    <main class="form-signin">
+        <form action="/login" method="POST">
+            <i class="far fa-user fa-5x"></i>
+            <h1 class="h3 my-3 fw-normal">Log in</h1>
+            <label for="inputEmail" class="visually-hidden">Email address</label>
+            <input type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="visually-hidden">Password</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <%- include('../partials/alert') %>
+            <div>
+                <a class="w-80 btn btn-lg btn-secondary" id="cancel" href="/">Cancel</a>
+                <button class="w-80 btn btn-lg btn-light" type="submit">Log in</button>
+            </div>
+            <p class="mt-5 mb-3 text-muted"></p>
+        </form>
+      </main>
+     <%- include('../partials/footer'); %>
+    </body>
+</div>
+</html>

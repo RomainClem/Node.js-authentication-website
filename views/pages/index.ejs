@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <%- include('../partials/head'); %>
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <%- include('../partials/header'); %>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+  <main class="px-3">
+    <h1 class="mb-5">Welcome to my website.</h1>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-light bg-dark" >Help</h5>
+            <p class="card-text text-dark">FAQ and various help on how to manipulate this website.</p>
+            <a href="/help" target="_blank" class="btn btn-secondary">Help page</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-light bg-dark">About</h5>
+            <p class="card-text text-dark">Various information and history of the website.</p>
+            <a href="/about" target="_blank" class="btn btn-secondary">About page</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-light bg-dark">Contact Info</h5>
+            <p class="card-text text-dark">Customer support details, email, chat and phone number.</p>
+            <a href="/contact" target="_blank" class="btn btn-secondary">Contact page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+    <%- include('../partials/footer'); %>
+  </body>
+  </div>
+</html>

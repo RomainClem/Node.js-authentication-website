@@ -1,0 +1,68 @@
+<button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#infoModal<%= user.ID %>">
+    info
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal<%= user.ID %>" tabindex="-1" aria-labelledby="exampleModalLabelInfo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User info</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">First name</label>
+                            <input type="text" name="firstName" class="form-control" id="firstName" value="<%= user.First_Name %>" readonly>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Last name</label>
+                            <input type="text" name="lastName" class="form-control" id="lastName" value="<%= user.Last_Name %>" readonly>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="email" class="form-label">Login</label>
+                            <input type="email" name="email" class="form-control" id="email" value="<%= user.Login %>"  readonly>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input name="password" class="form-control" id="password"  value="encrypted" readonly>
+                            <div class="invalid-feedback">
+                                Please enter a valid password.
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="row justify-content-md-center">
+                                <div class="col-5 mb-3">
+                                    <label for="role" class="form-label">Role</label>
+                                    <select class="form-select" name="role" id="role" disabled>
+                                        <option><%= user.Role %></option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a valid role.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"  class="btn btn-outline-danger" data-bs-dismiss="modal">Exit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

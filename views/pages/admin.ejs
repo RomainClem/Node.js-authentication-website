@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<%- include('../partials/head'); %>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <%- include('../partials/header'); %>
+    <body class="d-flex h-100 text-center text-white bg-dark">
+    <main class="px-3">
+        <h1>Admin Dashboard</h1>
+        <p class="lead">Add, edit or delete users.</p>
+        <%- include('../partials/alert') %>
+        <div class="bd-example">
+            <table class="table table-hover">
+                <thead>
+                <tr class="table-light">
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Role</th>
+                    <th scope="col"><%- include('../partials/createUser'); %></th>
+                </tr>
+                </thead>
+                <tbody>
+                <% users.forEach((user) => { %>
+                <% if (user.Role === 'Admin') { %>
+                    <tr class="table-danger">
+                <%} else if (user.Role === 'Guest') { %>
+                    <tr class="table-primary">
+                <%} else { %>
+                    <tr class="table-success">
+                <% } %>
+                    <th scope="row"><%= user.ID %></th>
+                    <td class="userInfo" ><%= `${user.First_Name} ${user.Last_Name}` %></td>
+                    <td class="userInfo" ><%= user.Login %></td>
+                    <td class="userInfo" ><%= user.Role %></td>
+                    <td class="d-print-none">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-auto">
+                                <%- include('../partials/viewInfo', {user: user}); %>
+                            </div>
+                            <div class="col-md-auto">
+                                <%- include('../partials/updateLogin', {id: user.ID }); %>
+                            </div>
+                            <div class="col-md-auto">
+                                <form action="/admin/delete/<%= user.ID %>" class="delete" method="POST">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                <% }); %>
+                </tbody>
+            </table>
+            <script>
+                function resetForm(formID) {
+                    document.getElementById(formID).reset();
+                }
+            </script>
+        </div>
+    </main>
+    <%- include('../partials/footer'); %>
+    </body>
+</div>
+</html>
